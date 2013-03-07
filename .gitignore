@@ -33,3 +33,9 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
+
+# Temporary Files and Folders
+*.sw[po]
+bin
+include
+lib
