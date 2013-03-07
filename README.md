@@ -8,33 +8,33 @@ do evento, como também inserir interações via chat ou twitter.
 
 1. Faça o checkout do projeto:
 
-``bash
+```bash
 $ git clone git@github.com:gilsondev/flisol-openspace.git
-``
+```
 
 2. Crie o ambiente virtual com o ``virtualenv``:
 
-``bash
+```bash
 $ virtualenv --distribute --unzip-setuptools flisol-openspace
-``
+```
 
 3. Faça o checkout do Twitter Bootstrap e instale as dependências:
 
-``bash
+```bash
 $ cd flisol-Openspace
 $ git submodule init
 $ git submodule update
 
 $ source bin/activate
 $ pip install -r requirements.txt
-``
+```
 
 5. Crie o banco localmente e rode as migrações:
 
-``bash
+```bash
 $ python manage.py syncdb
 $ python manage.py migrate
-``
+```
 
 ## Dependências
 
