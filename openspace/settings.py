@@ -120,6 +120,8 @@ INSTALLED_APPS = (
     # 'django.contrib.admin',
 
     'south',
+
+    'openspace.core',
 )
 
 # A sample logging configuration. The only tangible logging
