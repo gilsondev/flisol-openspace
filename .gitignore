@@ -39,3 +39,5 @@ nosetests.xml
 bin
 include
 lib
+*.db
+*.sqlite

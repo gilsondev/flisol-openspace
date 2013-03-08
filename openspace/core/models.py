@@ -7,7 +7,7 @@ from django.utils.translation import ugettext_lazy as _
 class Channel(models.Model):
     name = models.CharField(_(u"Nome do Canal"), max_length=50)
     description = models.TextField(_(u"Descrição"), blank=True)
-    slug = models.SlugField(_("http://canais.flisoldf.blog.br/"), max_length=50)
+    slug = models.SlugField(_(u"Endereço"), max_length=50)
 
     class Meta:
         verbose_name = u"canal"
