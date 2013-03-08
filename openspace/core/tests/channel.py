@@ -2,6 +2,8 @@
 
 from django.test import TestCase
 
+from openspace.core.models import Channel
+
 
 class ChannelURLTest(TestCase):
     def setUp(self):
@@ -14,3 +16,20 @@ class ChannelURLTest(TestCase):
     def test_template(self):
         """Renderiza o template de detalhes do canal"""
         self.assertTemplateUsed(self.resp, 'core/channel_detail.html')
+
+
+class ChannelModelTest(TestCase):
+    def setUp(self):
+        self.channel = Channel.objects.create(
+            name="Channel Test",
+            description="Description",
+            slug="channel-test"
+        )
+
+    def test_create(self):
+        """Cria o canal corretamente"""
+        self.assertTrue(self.channel.pk)
+
+    def test_unicode(self):
+        """Retorna a representacao do objeto"""
+        self.assertEquals(u"Channel Test", unicode(self.channel))
