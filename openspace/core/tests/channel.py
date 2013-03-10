@@ -7,7 +7,13 @@ from openspace.core.models import Channel
 
 class ChannelURLTest(TestCase):
     def setUp(self):
-        self.resp = self.client.get('/canal-teste')
+        self.channel = Channel.objects.create(
+            name="Channel Test",
+            description="Description",
+            slug="channel-test"
+        )
+
+        self.resp = self.client.get(self.channel.get_absolute_url())
 
     def test_get(self):
         """Acessa um canal e retorna status 200"""

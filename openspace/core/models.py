@@ -2,6 +2,7 @@
 
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
+from django.core.urlresolvers import reverse
 
 
 class Channel(models.Model):
@@ -16,3 +17,7 @@ class Channel(models.Model):
 
     def __unicode__(self):
         return self.name
+
+    @models.permalink
+    def get_absolute_url(self):
+        return reverse('channel_detail', args=[str(self.slug)])

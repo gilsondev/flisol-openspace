@@ -8,7 +8,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$', direct_to_template, {'template': 'base.html'}, name='home'),
-    url('^canal-teste$', 'openspace.core.views.channel_detail', name='channel_detail'),
+    url('^(?P<slug>[-\w+])/$', 'openspace.core.views.channel_detail', name='channel_detail'),
 
     url(r'^admin/', include(admin.site.urls)),
 )
