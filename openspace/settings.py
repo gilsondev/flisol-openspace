@@ -156,3 +156,9 @@ LOGGING = {
 
 # Django Grappelli
 GRAPPELLI_ADMIN_TITLE = "FLISOL Openspace"
+
+import os
+TINY_MCE_FILES = [
+    os.path.join(STATIC_URL, 'grappelli/tinymce/jscripts/tiny_mce/tiny_mce.js'),
+    os.path.join(STATIC_URL, 'js/tinymce_setup/tinymce_setup.js'),
+]
