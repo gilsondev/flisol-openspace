@@ -8,9 +8,9 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$', direct_to_template, {'template': 'base.html'}, name='home'),
-    url(r'', include('openspace.core.urls', namespace='core')),
-
+    url(r'^canais/', include('openspace.core.urls', namespace='core')),
     url(r'^admin/', include(admin.site.urls)),
+
 )
 
 if settings.DEBUG is False:
