@@ -19,4 +19,4 @@ class Channel(models.Model):
 
     @models.permalink
     def get_absolute_url(self):
-        return ('core:details', (), {'slug': self.slug})
+        return ("core:details", (self.slug,))
