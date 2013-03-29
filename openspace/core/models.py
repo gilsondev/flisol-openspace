@@ -25,3 +25,13 @@ class Channel(models.Model):
     @models.permalink
     def get_absolute_url(self):
         return ("core:details", (self.slug,))
+
+
+# TODO: Inserir testes
+class Programming(models.Model):
+    text = models.TextField(u"Conteúdo da Programação")
+
+    class Meta:
+        verbose_name = u"programação"
+        verbose_name_plural = u"programações"
+        db_table = "programming"
