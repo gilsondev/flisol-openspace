@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="row-fluid">
+        <div class="span6">
+            <h2>Login</h2>
+
+            <p>Você pode fazer login de várias formas. Veja quais maneiras você pode fazer:</p>
+            <div class="span6" style="margin-left: 0;">
+                <div class="span2">
+                    <a href="#"><img src="http://cdn1.iconfinder.com/data/icons/WPZOOM_Social_Networking_Icon_Set/64/facebook.png" alt="Facebook"></a>
+                </div>
+                <div class="span2">
+                    <a href="#"><img src="http://cdn1.iconfinder.com/data/icons/WPZOOM_Social_Networking_Icon_Set/64/google.png" alt="Gmail"></a>
+                </div>
+                <div class="span2">
+                    <a href="#"><img src="http://cdn3.iconfinder.com/data/icons/free-social-icons/67/github_circle_color-64.png" alt="Github"></a>
+                </div>
+            </div>
+            <div class="span7" style="margin-left: 0;">
+                <br />
+                <p>Ou pode logar com a conta que você registrou:</p>
+                <form>
+                    <div class="control-group">
+                        <div class="controls">
+                            <input type="text" id="inputEmail" placeholder="Usuario">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <input type="password" id="inputPassword" placeholder="Senha">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <button type="submit" class="btn btn-large">Entrar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="span6">
+            <div class="span12">
+                <h2>Registrar</h2>
+                <p>Outra opção é você se registrar agora:</p>
+                <form action=".">
+                    <fieldset>
+                        <div class="control-group">
+                            <div class="controls">
+                                <input type="text" id="inputEmail" placeholder="Usuario">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="controls">
+                                <input type="text" id="inputEmail" placeholder="E-mail">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="controls">
+                                <input type="text" id="inputEmail" placeholder="Senha">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="controls">
+                                <button type="submit" class="btn btn-large">Registrar</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

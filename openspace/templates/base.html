@@ -45,7 +45,7 @@
                     <a class="brand" href="http://twitter.github.com/bootstrap/examples/hero.html#">FLISOL Openspace</a>
                     <div class="nav-collapse collapse">
                         <ul class="nav pull-right">
-                            <li><a href="#">Login</a></li>
+                            <li><a href="{% url login %}">Login</a></li>
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div>
@@ -56,11 +56,15 @@
 
             {% block content %} {% endblock content %}
 
-            <footer>
-            <p>© Company 2013</p>
-            </footer>
-
         </div> <!-- /container -->
+
+        <div class="container">
+            <div id="footer" style="text-align: center;">
+                <div class="container">
+                    <p>&copy; FLISOL-DF 2013</p>
+                </div>
+            </div>
+        </div>
 
         <!-- Le javascript
         ================================================== -->

@@ -81,6 +81,24 @@ STATICFILES_FINDERS = (
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'mpf7l$q5tcw@+!81jkow-xong6wt6xm-(wh!9x_pc_9z6+2z^i'
 
+# List of processors used by RequestContext to populate the context.
+# Each one should be a callable that takes the request object as its
+# only parameter and returns a dictionary to add to the context.
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.core.context_processors.static',
+    'django.core.context_processors.tz',
+    'django.core.context_processors.request',
+    'django.contrib.messages.context_processors.messages',
+
+    'social_auth.context_processors.social_auth_by_name_backends',
+    'social_auth.context_processors.social_auth_backends',
+    'social_auth.context_processors.social_auth_login_redirect',
+)
+
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
@@ -121,6 +139,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
 
     'south',
+    'social_auth',
 
     'openspace.core',
 )
@@ -162,3 +181,36 @@ TINY_MCE_FILES = [
     os.path.join(STATIC_URL, 'grappelli/tinymce/jscripts/tiny_mce/tiny_mce.js'),
     os.path.join(STATIC_URL, 'js/tinymce_setup/tinymce_setup.js'),
 ]
+
+# Django Social Auth
+AUTHENTICATION_BACKENDS = (
+    'social_auth.backends.facebook.FacebookBackend',
+    'social_auth.backends.google.GoogleOAuth2Backend',
+    'social_auth.backends.contrib.github.GithubBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+# Tokens
+FACEBOOK_APP_ID = ''
+FACEBOOK_API_SECRET = ''
+GOOGLE_OAUTH2_CLIENT_ID = ''
+GOOGLE_OAUTH2_CLIENT_SECRET = ''
+GITHUB_APP_ID = ''
+GITHUB_API_SECRET = ''
+
+# TODO: Definir parâmetro para pegar o email do usuário
+FACEBOOK_AUTH_EXTRA_ARGUMENTS = {'display': 'touch'}
+
+# Qual página redirecionar após o login
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/'
+
+# Qual página redirecionar após o logout
+SOCIAL_AUTH_DISCONNECT_REDIRECT_URL = '/'
+
+# Qual página redirecionar quando ocorrer algum erro
+# na autenticação da conta.
+SOCIAL_AUTH_BACKEND_ERROR_URL = '/login/error/'
+
+# Define quais campos não devem ser atualizados quando
+# efetuar uma nova autenticação
+SOCIAL_AUTH_PROTECTED_USER_FIELDS = ['email', ]
