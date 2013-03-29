@@ -3,7 +3,7 @@
 from django.contrib import admin
 from django.conf import settings
 
-from openspace.core.models import Channel
+from openspace.core.models import Channel, Programming
 
 
 class ChannelAdmin(admin.ModelAdmin):
@@ -13,4 +13,12 @@ class ChannelAdmin(admin.ModelAdmin):
     class Media:
         js = settings.TINY_MCE_FILES
 
+
+class ProgrammingAdmin(admin.ModelAdmin):
+    pass
+
+    class Media:
+        js = settings.TINY_MCE_FILES
+
 admin.site.register(Channel, ChannelAdmin)
+admin.site.register(Programming, ProgrammingAdmin)
