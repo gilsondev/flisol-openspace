@@ -61,7 +61,14 @@
         <div class="container">
             <div id="footer" style="text-align: center;">
                 <div class="container">
-                    <p>&copy; FLISOL-DF 2013</p>
+                    <!--[if lte IE 8]><span style="filter: FlipH; -ms-filter: "FlipH"; display: inline-block;"><![endif]-->
+                        <span style="-moz-transform: scaleX(-1); -o-transform: scaleX(-1);
+                            -webkit-transform: scaleX(-1); transform: scaleX(-1); display: inline-block;">
+                            &copy;
+                        </span>
+                        <!--[if lte IE 8]></span><![endif]-->
+                        <span>FLISOL-DF 2013</span>
+                        <p>Còdigo-fonte hospedado no <a href="http://github.com/flisoldf/flisol-openspace">Github</a>. Esse projeto usa a licença <a href="http://www.gnu.org/licenses/gpl.txt">GNU General Public License</a></p>
                 </div>
             </div>
         </div>
