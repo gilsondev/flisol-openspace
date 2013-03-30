@@ -3,6 +3,8 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
+from taggit.managers import TaggableManager
+
 
 class Channel(models.Model):
     name = models.CharField(_(u"Nome do Canal"), max_length=50)
@@ -13,6 +15,8 @@ class Channel(models.Model):
                                         Exemplo:
                                         <strong>http://openspace.flisol.net/canais/
                                         [seu endereço]</strong>"""))
+
+    hashtags = TaggableManager()
 
     class Meta:
         verbose_name = u"canal"
