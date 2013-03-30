@@ -12,12 +12,13 @@
                     <a href="{% url socialauth_begin 'facebook' %}"><img src="http://cdn1.iconfinder.com/data/icons/WPZOOM_Social_Networking_Icon_Set/64/facebook.png" alt="Facebook"></a>
                 </div>
                 <div class="span2">
-                    <a href="#"><img src="http://cdn1.iconfinder.com/data/icons/WPZOOM_Social_Networking_Icon_Set/64/google.png" alt="Gmail"></a>
+                    <a href="{% url socialauth_begin 'google-oauth2' %}"><img src="http://cdn1.iconfinder.com/data/icons/WPZOOM_Social_Networking_Icon_Set/64/google.png" alt="Gmail"></a>
                 </div>
                 <div class="span2">
-                    <a href="#"><img src="http://cdn3.iconfinder.com/data/icons/free-social-icons/67/github_circle_color-64.png" alt="Github"></a>
+                    <a href="{% url socialauth_begin 'github' %}"><img src="http://cdn3.iconfinder.com/data/icons/free-social-icons/67/github_circle_color-64.png" alt="Github"></a>
                 </div>
             </div>
+            <!--
             <div class="span7" style="margin-left: 0;">
                 <br />
                 <p>Ou pode logar com a conta que você registrou:</p>
@@ -70,6 +71,7 @@
                 </form>
             </div>
         </div>
+        -->
     </div>
 
 {% endblock content %}

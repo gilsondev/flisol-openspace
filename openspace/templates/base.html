@@ -45,7 +45,16 @@
                     <a class="brand" href="http://twitter.github.com/bootstrap/examples/hero.html#">FLISOL Openspace</a>
                     <div class="nav-collapse collapse">
                         <ul class="nav pull-right">
+                            {% if user.is_authenticated %}
+                                <li class="dropdown">
+                                        <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">{{ user.get_full_name|default:user.email }}<b class="caret"></b></a>
+                                        <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                                            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url logout %}">Sair</a></li>
+                                        </ul>
+                                </li>
+                            {% else %}
                             <li><a href="{% url login %}">Login</a></li>
+                            {% endif %}
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div>
@@ -77,6 +86,7 @@
         ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
         <script src="{{ STATIC_URL }}js/jquery.js"></script>
+        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-dropdown.js"></script>
 
 
 
