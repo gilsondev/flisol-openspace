@@ -86,18 +86,20 @@
             </div>
         </div>
 
-        <!-- Le javascript
-        ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="{{ STATIC_URL }}js/jquery.js"></script>
-        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-dropdown.js"></script>
-        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-modal.js"></script>
-        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-collapse.js"></script>
-        <script type="text/javascript">
-            $(function() {
-                $('#modalLogin').modal({'show': false});
-            });
-        </script>
+        {% block scripts %}
+            <!-- Le javascript
+            ================================================== -->
+            <!-- Placed at the end of the document so the pages load faster -->
+            <script src="{{ STATIC_URL }}js/jquery.js"></script>
+            <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-dropdown.js"></script>
+            <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-modal.js"></script>
+            <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-collapse.js"></script>
+            <script type="text/javascript">
+                $(function() {
+                    $('#modalLogin').modal({'show': false});
+                });
+            </script>
+        {% endblock scripts %}
 
 
 
