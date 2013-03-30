@@ -187,6 +187,10 @@ AUTHENTICATION_BACKENDS = (
     'social_auth.backends.facebook.FacebookBackend',
     'social_auth.backends.google.GoogleOAuth2Backend',
     'social_auth.backends.contrib.github.GithubBackend',
+    'social_auth.backends.yahoo.YahooBackend',
+    'social_auth.backends.contrib.yahoo.YahooOAuthBackend',
+    'social_auth.backends.OpenIDBackend',
+    'social_auth.backends.contrib.linkedin.LinkedinBackend',
     'django.contrib.auth.backends.ModelBackend',
 )
 
@@ -197,7 +201,19 @@ GOOGLE_OAUTH2_CLIENT_ID = '681640174227.apps.googleusercontent.com'
 GOOGLE_OAUTH2_CLIENT_SECRET = 'cU7uYErp7OkBTkS4pBBJuBmj'
 GITHUB_APP_ID = 'ba1e47649365205359a8'
 GITHUB_API_SECRET = 'a0f3ad5e643d76eb60da8a0518e8f91dc388f74b'
+YAHOO_CONSUMER_KEY = 'dj0yJmk9M1NmSmdvWVNpdzJFJmQ9WVdrOVJVZHNPV0ZHTkdNbWNHbzlNVE00TnpVeU5EazJNZy0tJnM9Y29uc3VtZXJzZWNyZXQmeD1jNw--'
+YAHOO_CONSUMER_SECRET = '6bb5f943f5bca2717d3bf792c2e48cff047596b8'
 
+# Linkedin Backend
+LINKEDIN_SCOPE = ['r_basicprofile', 'r_emailaddress', ]
+LINKEDIN_EXTRA_FIELD_SELECTORS = ['email-address', 'headline']
+LINKEDIN_EXTRA_DATA = [('id', 'id'),
+                       ('first-name', 'first_name'),
+                       ('last-name', 'last_name'),
+                       ('email-address', 'email_address'),
+                       ('headline', 'headline'), ]
+
+# Facebook Backend
 FACEBOOK_EXTENDED_PERMISSIONS = ['email']
 FACEBOOK_AUTH_EXTRA_ARGUMENTS = {'locale': 'pt_BR'}
 

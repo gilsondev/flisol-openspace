@@ -8,21 +8,23 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <!-- Le styles -->
-        <link rel="stylesheet/less" type="text/css" media="all" href="{{ STATIC_URL }}less/style.less" />
-        <script src="{{ STATIC_URL }}js/less.js"></script>
+        {% block styles %}
+            <!-- Le styles -->
+            <link rel="stylesheet/less" type="text/css" media="all" href="{{ STATIC_URL }}less/style.less" />
+            <script src="{{ STATIC_URL }}js/less.js"></script>
 
-        <style type="text/css">
-            body {
-                padding-top: 60px;
-                padding-bottom: 40px;
-            }
-        </style>
+            <style type="text/css">
+                body {
+                    padding-top: 60px;
+                    padding-bottom: 40px;
+                }
+            </style>
 
-        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-        <!--[if lt IE 9]>
-        <script src="../assets/js/html5shiv.js"></script>
-        <![endif]-->
+            <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+            <!--[if lt IE 9]>
+            <script src="../assets/js/html5shiv.js"></script>
+            <![endif]-->
+        {% endblock styles %}
 
         <!-- Fav and touch icons -->
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-144-precomposed.png">
@@ -90,6 +92,7 @@
         <script src="{{ STATIC_URL }}js/jquery.js"></script>
         <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-dropdown.js"></script>
         <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-modal.js"></script>
+        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-collapse.js"></script>
         <script type="text/javascript">
             $(function() {
                 $('#modalLogin').modal({'show': false});

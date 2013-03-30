@@ -1,16 +1,27 @@
 {% extends "base.html" %}
 
+{% block styles %}
+    {{ block.super }}
+    <style type="text/css">
+        .channels .span4 {
+            min-height: 200px;
+        }
+    </style>
+{% endblock styles %}
+
 {% block content %}
 
-<div class="row-fluid">
-    <ul class="thumbnails">
+<div class="row-fluid thumbnails channels">
         {% for channel in channels %}
-            <li class="span4 thumbnail">
-                <h2>{{ channel.name }}</h2>
-                <p><a class="btn" href="{{ channel.get_absolute_url }}">Entre agora »</a></p>
-            </li>
+            <div class="span4 thumbnail">
+                <div class="span12">
+                    <h3>{{ channel.name }}</h3>
+                </div>
+                <div class="span12" style="margin-top: 50px;">
+                    <p><a class="btn" href="{{ channel.get_absolute_url }}">Entre agora »</a></p>
+                </div>
+            </div>
         {% endfor %}
-    </ul>
 </div>
 
 <hr>
