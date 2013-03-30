@@ -23,6 +23,11 @@ class Channel(models.Model):
         verbose_name_plural = u"canais"
         db_table = "channel"
 
+    def get_hashtags(self):
+        """Retorna as hashtags separados por espaco"""
+        hashtags = self.hashtags.values_list('name', flat=True)
+        return str(' '.join(hashtags))
+
     def __unicode__(self):
         return self.name
 
