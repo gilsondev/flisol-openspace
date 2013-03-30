@@ -5,6 +5,11 @@ from django.shortcuts import render, get_object_or_404
 from openspace.core.models import Channel, Programming
 
 
+def channel_list(request):
+    channels = Channel.objects.all()
+    return render(request, 'index.html', {'channels': channels})
+
+
 # TODO: Ver uma melhor forma para disponibilizar a programação
 def channel_detail(request, slug):
     channel = get_object_or_404(Channel, slug=slug)
