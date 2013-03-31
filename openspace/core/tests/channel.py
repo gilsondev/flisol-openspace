@@ -42,11 +42,10 @@ class ChannelModelTest(TestCase):
 
     def test_hashtags(self):
         """Insere as hashtags"""
-        self.channel.hashtags.add("hashtag", "test" "others")
+        self.channel.hashtags = "hashtag, test, others"
         self.assertTrue(self.channel.hashtags)
 
     def test_get_hashtags(self):
-        """Retorna um string com as hashtags separados em espaços"""
-        self.channel.hashtags.add("hashtag", "test", "others")
-
-        self.assertEquals(self.channel.get_hashtags(), "test hashtag others")
+        """Retorna as hashtags separados por espaço"""
+        self.channel.hashtags = "hashtag, test, others"
+        self.assertEquals("hashtag test others", self.channel.get_hashtags)

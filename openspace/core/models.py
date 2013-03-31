@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
+import tagging
+
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-
-from taggit.managers import TaggableManager
 
 
 class Channel(models.Model):
@@ -16,20 +16,17 @@ class Channel(models.Model):
                                         <strong>http://openspace.flisol.net/canais/
                                         [seu endereço]</strong>"""))
 
-    hashtags = TaggableManager()
-
     class Meta:
         verbose_name = u"canal"
         verbose_name_plural = u"canais"
         db_table = "channel"
 
-    def get_hashtags(self):
-        """Retorna as hashtags separados por espaco"""
-        hashtags = self.hashtags.values_list('name', flat=True)
-        return str(' '.join(hashtags))
-
     def __unicode__(self):
         return self.name
+
+    def get_hashtags(self):
+        """Retorna as hashtags separados por espaço"""
+        return ' '.join(self.hashtags.values_list('name', flat=True))
 
     @models.permalink
     def get_absolute_url(self):
@@ -44,3 +41,7 @@ class Programming(models.Model):
         verbose_name = u"programação"
         verbose_name_plural = u"programações"
         db_table = "programming"
+
+
+tagging.register(Channel, tag_descriptor_attr='hashtags',
+                 tagged_item_manager_attr='hashed')

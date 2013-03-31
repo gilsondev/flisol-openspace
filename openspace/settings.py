@@ -140,7 +140,7 @@ INSTALLED_APPS = (
 
     'south',
     'social_auth',
-    'taggit',
+    'tagging',
 
     'openspace.core',
 )
