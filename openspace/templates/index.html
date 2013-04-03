@@ -3,25 +3,33 @@
 {% block styles %}
     {{ block.super }}
     <style type="text/css">
+        .channels {
+            margin-bottom: 5%;
+        }
         .channels .span4 {
             min-height: 200px;
         }
+
     </style>
 {% endblock styles %}
 
 {% block content %}
 
 <div class="row-fluid thumbnails channels">
-        {% for channel in channels %}
-            <div class="span4 thumbnail">
-                <div class="span12">
-                    <h3>{{ channel.name }}</h3>
-                </div>
-                <div class="span12" style="margin-top: 50px;">
-                    <p><a class="btn" href="{{ channel.get_absolute_url }}">Entre agora »</a></p>
-                </div>
+    {% for channel in channels %}
+        {% if forloop.counter|divisibleby:"4" %}
             </div>
-        {% endfor %}
+            <div class="row-fluid thumbnails channels">
+        {% endif %}
+        <div class="span4 thumbnail">
+            <div class="span12">
+                <h3>{{ channel.name }}</h3>
+            </div>
+            <div class="span12" style="margin-top: 50px;">
+                <p><a class="btn" href="{{ channel.get_absolute_url }}">Entre agora »</a></p>
+            </div>
+        </div>
+    {% endfor %}
 </div>
 
 <hr>
