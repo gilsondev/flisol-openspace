@@ -5,3 +5,4 @@ dj-database-url==0.2.1
 psycopg2==2.4.6
 django-compressor==1.2
 django-grappelli==2.4.4
+django-socketio==0.3.5

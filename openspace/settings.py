@@ -141,8 +141,10 @@ INSTALLED_APPS = (
     'south',
     'social_auth',
     'tagging',
+    'django_socketio',
 
     'openspace.core',
+    'openspace.chat',
 )
 
 # A sample logging configuration. The only tangible logging

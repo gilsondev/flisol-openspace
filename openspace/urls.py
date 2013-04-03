@@ -8,6 +8,8 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'', include('openspace.core.urls', namespace='core')),
+    url(r'', include("django_socketio.urls")),
+    url(r'^chat/', include('openspace.chat.urls')),
 
     # Other Apps
     url(r'', include('social_auth.urls')),
