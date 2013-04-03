@@ -1,12 +1,36 @@
 {% extends "base.html" %}
 
+{% block styles %}
+    {{ block.super }}
+    <style type="text/css">
+        #streaming {
+            float: left;
+            padding: 10px;
+            border: 5px solid #61625d;
+            -moz-border-radius: 5px; /* FF1+ */
+                -ms-border-radius: 5px; /* IE future proofing */
+            -webkit-border-radius: 5px; /* Saf3+, Chrome */
+            border-radius: 5px; /* Opera 10.5, IE 9 */
+            background: #000000;
+            background-image: -moz-linear-gradient(top, #313131, #000000); /* FF3.6 */
+            background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #313131),color-stop(1, #000000)); /* Saf4+, Chrome */
+            box-shadow: inset 0 15px 35px #535353;
+        }
+    </style>
+{% endblock styles %}
+
 {% block content %}
 <h1>{{ channel.name }}</h1>
 <br />
 <div class="container-fluid">
     <div class="row-fluid">
         <div class="span8">
-            <iframe src="http://player.vimeo.com/video/7126991" width="600" height="381" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+            <video id="streaming" class="video-js vjs-default-skin" controls autoplay width="540" height="335" data-setup="{}">
+                <source src="{{ channel.video }}" type='video/ogg; codecs="theora, vorbis"'>
+                <applet code="com.fluendo.player.Cortado.class" archive="http://theora.org/cortado.jar" width="352" height="288">
+                    <param name="url" value="{{ channel.video }}"/> 
+                </applet>
+            </video>
         </div>
         <div class="span4">
             {% include "room.html" %}

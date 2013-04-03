@@ -8,7 +8,7 @@ from openspace.core.forms import ChannelForm
 
 
 class ChannelAdmin(admin.ModelAdmin):
-    fields = ('name', 'slug', 'description', 'hashtags')
+    fields = ('name', 'slug', 'description', 'hashtags', 'video')
     prepopulated_fields = {"slug": ("name",)}
     form = ChannelForm
 

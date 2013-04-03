@@ -10,7 +10,8 @@ class ChannelURLTest(TestCase):
         self.channel = Channel.objects.create(
             name="Channel Test",
             description="Description",
-            slug="channel-test"
+            slug="channel-test",
+            video="http://techslides.com/demos/sample-videos/small.ogv"
         )
 
         self.resp = self.client.get(self.channel.get_absolute_url())
@@ -29,7 +30,8 @@ class ChannelModelTest(TestCase):
         self.channel = Channel.objects.create(
             name="Channel Test",
             description="Description",
-            slug="channel-test"
+            slug="channel-test",
+            video="http://techslides.com/demos/sample-videos/small.ogv"
         )
 
     def test_create(self):
@@ -48,4 +50,4 @@ class ChannelModelTest(TestCase):
     def test_get_hashtags(self):
         """Retorna as hashtags separados por espaço"""
         self.channel.hashtags = "hashtag, test, others"
-        self.assertEquals("hashtag test others", self.channel.get_hashtags)
+        self.assertEquals("hashtag others test", self.channel.get_hashtags())
