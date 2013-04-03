@@ -15,6 +15,8 @@ class Channel(models.Model):
                                         Exemplo:
                                         <strong>http://openspace.flisol.net/canais/
                                         [seu endereço]</strong>"""))
+    video = models.URLField(_(u"URL do Vídeo"), verify_exists=False,
+                            max_length=200)
 
     class Meta:
         verbose_name = u"canal"
