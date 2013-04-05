@@ -6,3 +6,4 @@ psycopg2==2.4.6
 django-compressor==1.2
 django-grappelli==2.4.4
 gunicorn
+django-tagging-ng==0.3.3
