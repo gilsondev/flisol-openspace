@@ -138,6 +138,7 @@ INSTALLED_APPS = (
     'grappelli',
     'django.contrib.admin',
 
+    'gunicorn',
     'south',
     'social_auth',
     'tagging',
