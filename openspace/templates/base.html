@@ -1,3 +1,5 @@
+{% load compress %}
+
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
@@ -9,9 +11,18 @@
         <meta name="author" content="">
 
         {% block styles %}
-            <!-- Le styles -->
+
+        {% if debug %}
             <link rel="stylesheet/less" type="text/css" media="all" href="{{ STATIC_URL }}less/style.less" />
             <script src="{{ STATIC_URL }}js/less.js"></script>
+        {% else %}
+            {% compress css %}
+                <link rel="stylesheet" type="text/less" media="all" href="{{ STATIC_URL }}less/style.less" />
+            {% endcompress %}
+        {% endif %}
+
+
+            <!-- Le styles -->
 
             <style type="text/css">
                 body {
