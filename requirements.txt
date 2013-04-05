@@ -9,4 +9,3 @@ gunicorn
 django-tagging-ng==0.3.3
 django-social-auth==0.7.22
 django-socketio==0.3.5
-django-compressor==1.2
