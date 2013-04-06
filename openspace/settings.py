@@ -238,6 +238,8 @@ SOCIAL_AUTH_BACKEND_ERROR_URL = '/login/error/'
 SOCIAL_AUTH_PROTECTED_USER_FIELDS = ['email', ]
 
 # Django Compressor
+COMPRESS_ENABLED = True
+
 COMPRESS_PRECOMPILERS = (
     ('text/less', 'lessc {infile} {outfile}'),
 )
