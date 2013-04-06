@@ -12,7 +12,7 @@ DEBUG = os.environ.get('DEBUG', True)
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    ('Gilson Filho', 'contatogilsonsbf@gmail.com'),
 )
 
 MANAGERS = ADMINS
@@ -142,7 +142,6 @@ INSTALLED_APPS = (
     'django.contrib.admin',
 
     'gunicorn',
-    'compressor',
     'south',
     'social_auth',
     'tagging',
@@ -236,12 +235,3 @@ SOCIAL_AUTH_BACKEND_ERROR_URL = '/login/error/'
 # Define quais campos não devem ser atualizados quando
 # efetuar uma nova autenticação
 SOCIAL_AUTH_PROTECTED_USER_FIELDS = ['email', ]
-
-# Django Compressor
-COMPRESS_ENABLED = True
-
-COMPRESS_PRECOMPILERS = (
-    ('text/less', 'lessc {infile} {outfile}'),
-)
-
-INTERNAL_IPS = ('127.0.0.1',)
