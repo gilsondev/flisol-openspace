@@ -25,12 +25,7 @@
 <div class="container-fluid">
     <div class="row-fluid">
         <div class="span8">
-            <video id="streaming" class="video-js vjs-default-skin" controls autoplay width="540" height="335" data-setup="{}">
-                <source src="{{ channel.video }}" type='video/ogg; codecs="theora, vorbis"'>
-                <applet code="com.fluendo.player.Cortado.class" archive="http://theora.org/cortado.jar" width="352" height="288">
-                    <param name="url" value="{{ channel.video }}"/> 
-                </applet>
-            </video>
+            <iframe frameborder="0" src="{{ channel.video }}" width="480" height="360"></iframe>
         </div>
         <div class="span4">Chat</div>
     </div>
