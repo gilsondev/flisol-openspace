@@ -13,11 +13,13 @@
         {% block styles %}
 
         {% if debug %}
-            <link rel="stylesheet/less" type="text/css" media="all" href="{{ STATIC_URL }}less/style.less" />
+            <link rel="stylesheet/less" type="text/css" media="all" href="{{ STATIC_URL }}bootstrap/less/bootstrap.less" />
+            <link rel="stylesheet/less" type="text/css" media="all" href="{{ STATIC_URL }}bootstrap/less/responsive.less" />
             <script src="{{ STATIC_URL }}js/less.js"></script>
         {% else %}
             {% compress css %}
-                <link rel="stylesheet" type="text/less" media="all" href="{{ STATIC_URL }}less/style.less" />
+            <link rel="stylesheet/less" type="text/css" media="all" href="{{ STATIC_URL }}bootstrap/less/bootstrap.less" />
+            <link rel="stylesheet/less" type="text/css" media="all" href="{{ STATIC_URL }}bootstrap/less/responsive.less" />
             {% endcompress %}
         {% endif %}
 
